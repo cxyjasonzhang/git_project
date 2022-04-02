@@ -1,0 +1,528 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ /* 方法三-伪元素法：after */
+ .clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    /* IE6、7专有 */
+    *zoom: 1;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* 版心 */
+.w {
+    width: 1200px;
+    /* 上边和下边：无外边距 */
+    margin: auto;
+}
+body {
+    background-color: #f3f5f7;
+}
+.hearder {
+    height: 42px;
+    /* 上下30px 左右居中对齐 */
+    margin: 30px auto;
+}
+.logo {
+    height: 42px;
+    width: 198px;
+    /* background-color: blue; */
+    float: left;
+}
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+.nav li {
+    float: left;
+    padding: 0 15px;
+}
+.nav ul li a {
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+.nav ul li a:hover {
+    /* border width粗细 style风格 color颜色  */
+    border-bottom: 1px solid #00a4ff;
+    color: #00a4ff;
+}
+/* 搜索框 */
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    /* background-color: rgb(44, 44, 133); */
+    margin-left: 50px;
+}
+.search input {
+    float: left;
+    width: 345px;
+    height: 38px;
+    border: 2px solid #00a4ff;
+    border-right: 0;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 15px;
+}
+.search button {
+    /* 行内块元素间会有空隙 加浮动可清除之间的缝隙 */
+    float: left;
+    width: 50px;
+    height: 42px;
+    /* background-color: brown; */
+    /* 原来的按钮会带有边框 要先清除边框 */
+    border: 0;
+    background: url(picture/fa-search.png);
+}
+/* user 用户模块 */
+/* 此处文字和头像未对齐，后续再解决 */
+.user {
+    float:right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+.banner .w {
+    height: 420px;
+    /* background-color: chartreuse; */
+    background: url(picture/banner2.png) no-repeat top center;
+}
+.subnav {
+    float: left;
+    width: 190px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.3);
+}
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+}
+.subnav ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+.subnav ul li a span {
+    float: right;
+}
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+    /* 浮动的盒子不会有外边距合并的问题 */
+    margin-top: 50px;
+}
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    font-size: 18px;
+    text-align: center;
+    line-height: 48px;
+    color: #fff;
+}
+.history {
+    margin: 0 20px;
+}
+.history ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #a5a5a5;
+}
+.history ul li h3 {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+.history ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.history .more {
+    /* a是行内元素，所以要转化为块级元素 */
+    display: block;
+    height: 38px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 38px;
+    margin-top: 6px;
+    color: #00a4ff;
+    border: 2px solid #00a4ff;
+}
+/* 精品推荐模块 */
+.goods {
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.goods h3 {
+    float:left;
+    line-height: 60px;
+    font-size: 16px;
+    color: #00a4ff;
+    padding-left: 30px;
+}
+.goods ul {
+    float: left;
+    line-height: 60px;
+}
+.goods ul li {
+    float: left;
+    margin-left: 30px;
+}
+.goods ul li a {
+    font-size: 16px;
+    color: #050505;
+    padding-left: 35px;
+    border-left: 1px solid #bfbfbf;
+}
+.goods .interest {
+    float: right;
+    line-height: 60px;
+    font-size: 14px;
+    color: #00a4ff;
+    padding-right: 30px;
+}
+.box {
+    height: 556px;
+    margin-top: 30px;
+}
+.boxhd {
+    height: 45px;
+}
+.boxhd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+.boxhd a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+.boxbd {
+    width: 1220px;
+}
+/* 子绝父相 */
+.boxbd ul li {
+    position: relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+/* 亲儿子选择器 */
+.boxbd ul li>img {
+    width: 100%;
+}
+.boxbd ul li em img {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+.boxbd ul li h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #050505;
+    padding: 24px 18px 18px 24px;
+}
+.boxbd .info {
+    font-size: 12px;
+    color: #999999;
+    margin-left: 25px;
+}
+.boxbd .info span {
+    color: #ff7c2d;
+}
+/* 数据分析师模块 */
+.box2 {
+    height: 440px;
+    width: 1200px;
+    margin-top: 60px;
+}
+.box2-hb {
+    height: 45px;
+}
+.box2-hb h3 {
+    float: left;
+    width: 230px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 200px;
+    color: #494949;
+}
+.box2-hb ul {
+    float: left;
+    /* width: 345px; */
+}
+.box2-hb ul li {
+    float: left;
+    color: #868686;
+    font-size: 16px;
+    margin-right: 70px;
+    line-height: 45px;
+}
+.box2-hb ul .spac {
+    color: #00a4ff;
+    font-size: 16px;
+}
+.box2-hb a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.box2-db {
+    height: 401px;   
+}
+.box2-db .db-left {
+    float: left;
+    width: 230px;    
+}
+.box2-db .db-left img {
+    width: 100%;
+    height: 100%;
+}
+.box2-db .db-right {
+    float: right;
+    width: 960px;
+}
+.db-right .db-rightup img {
+    width: 100%;
+}
+.db-right ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    margin-top: 22px;
+    margin-right: 15px;
+}
+.db-right ul .dbspc {
+    margin-right: 0;
+}
+.db-right ul li img {
+    width: 100%;
+}
+.db-right ul li h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #050505;
+    padding: 24px 18px 18px 24px;
+}
+.db-right .info2 {
+    font-size: 12px;
+    color: #999999;
+    margin-left: 25px;
+}
+.db-right .info2 span {
+    color: #ff7c2d;
+}
+/* 机器人学习工程师 模块 */
+.box3 {
+    /* 距上模块为40px */
+    margin-top: 40px;
+    height: 319px;
+}
+/* box3中的上半模块 */
+.box3-hb {
+    /* 设这个高度的目的是让其中的ul中得li居中对齐 */
+    height: 45px;
+}
+.box3-hb h3 {
+    float: left;
+    width: 229px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 200px;
+    color: #494949;
+}
+.box3-hb ul {
+   float: left;
+}
+.box3-hb ul li {
+    float: left;
+    font-size: 16px;
+    color: #868686;
+    margin-right: 70px;
+    line-height: 45px;
+}
+.box3-hb ul .spac {
+    color: #00a4ff;
+    font-size: 16px;
+}
+.box3-hb a {
+    float: right;
+    color: #a5a5a5;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.box3-db {
+    height: 267px;
+    /* 此时加宽度是因为下面的li加了margin-right，目的是使最后一个模块不会掉下来 */
+    width: 1220px;
+}
+.box3-db ul li {
+    float: left;
+    /* 在上面的.box3-db中加宽度，使最后一个课程不会掉下 */
+    margin-right: 14px;
+    background-color: #fff;
+    width: 229px;
+    height: 273px;
+}
+.box3-db ul li img {
+    width: 100%;
+}
+.box3-db ul li h4 {
+    color: #050505;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 24px 16px 16px 21px;
+}
+.box3-db ul li .info3 {
+    color: #999999;
+    font-size: 12px;
+    padding-left: 21px;
+}
+.box3-db ul li .info3 span {
+    color: #ff7c2d;
+}
+/* 前端开发工程师模块 */
+.box4 {
+    /* 先改大，后改为314 */
+    height: 354px;
+    margin-top: 40px;
+}
+.box4-hb {
+    height: 45px;
+}
+.box4-hb h3 {
+    float: left;
+    width: 229px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 200px;
+    color: #050505;
+}
+.box4-hb ul {
+    float: left;
+}
+.box4-hb ul li {
+    float: left;
+    line-height: 45px;
+    font-size: 16px;
+    padding-right: 70px;
+    color: #868686;
+}
+.box4-hb ul .spac4 {
+    color: #00a4ff;
+}
+.box4-hb a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.box4-db {
+    height: 271px;
+    width: 1220px;
+}
+.box4-db ul li {
+    float: left;
+    width: 229px;
+    height: 270px;
+    margin-right: 14px;
+    background-color: #fff;
+}
+.box4-db ul li img {
+    width: 100%;
+}
+.box4-db ul li h4 {
+    color: #050505;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 24px 16px 0 21px;
+}
+.box4-db ul li .info4 {
+    color: #999999;
+    font-size: 12px;
+    padding-left: 21px;
+    padding-top: 38px;
+}
+.box4-db ul li .info4 span {
+    color: #ff7c2d;
+}
+.footer {
+    height: 418px;
+    background-color: #fff;
+}
+.footer .middle {
+    width: 1200px;
+    margin: auto;
+}
+.copyright {
+    float: left;
+    margin: 30px 0 0 25px;
+}
+.copyright p {
+    font-size: 12px;
+    color: #666666;
+    padding: 20px 0 15px 0;
+}
+.copyright .download {
+    display: block;
+    font-size: 16px;
+    color: #00a4ff;
+    width: 117px;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+    border: 1px solid #00a4ff;
+}
+.links {
+    float: right;
+    margin-top: 35px;
+}
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+.links dl dt {
+    font-size: 16px;
+    color: #333333;
+}
+.links dl dd {
+    font-size: 12px;
+    color: #333333;
+    margin-top: 10px;
+}
